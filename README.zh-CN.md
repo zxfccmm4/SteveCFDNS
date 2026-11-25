@@ -12,11 +12,11 @@
 
 | 项目 | iOS / iPadOS | macOS |
 | :--- | :--- | :--- |
-| 版本 | `v1.0.1`（Build `2`） | `v1.0.1`（Build `2`） |
-| 安装包 | [`SteveCFDNS_v1.0.1_b2.ipa`](SteveCFDNS_v1.0.1_b2.ipa)（17.0 MB） | [`SteveCFDNS_v1.0.1_b2.dmg`](SteveCFDNS_v1.0.1_b2.dmg)（19.4 MB） |
+| 版本 | `v1.0.2`（Build `3`） | `v1.0.2`（Build `3`） |
+| 安装包 | [`SteveCFDNS_v1.0.2_b3.ipa`](SteveCFDNS_v1.0.2_b3.ipa)（17.3 MB） | [`SteveCFDNS_v1.0.2_b3.dmg`](SteveCFDNS_v1.0.2_b3.dmg)（20.1 MB） |
 | 架构 | `arm64`（支持 iPhone 与 iPad） | 通用二进制（`arm64` + `x86_64`） |
 | 签名状态 | 未签名（Release 构建） | Ad-hoc 临时签名（Release 构建） |
-| SHA-256 | `c5ecbbc80d40f51846ffb9b507283e7158455f068f9d9850f06679d0a739e29c` | `5bed82d5c7846cb054f36d53cd17e1596f4c0caeaab8fdd2f9bd633b00ad4def` |
+| SHA-256 | `173d042b9dd2ddba1015c93ecfac2900bbc1392f919539fd66dd0682069f59a9` | `d0b7439a45da4c99cf2feb88f0dd05c0f964c4cadf0cc4688c5940fc5b72da2a` |
 
 ## 安装方式
 
@@ -53,22 +53,20 @@ DMG 内的 App 为 **Ad-hoc 临时签名**，未经过公证。安装到「应�
 | **规则中心** | 统一管理 Page Rules、WAF / 防火墙自定义规则以及各阶段 Rulesets。 |
 | **流量分析** | 请求数、页面浏览、访客与带宽趋势，并新增缓存命中率、缓存带宽占比与威胁拦截统计。 |
 | **Workers** | 只读查看当前账户已部署的 Cloudflare Workers 脚本。 |
-| **AI 助手** | 支持端侧 Apple 智能，也支持远程服务商（OpenAI、Anthropic Claude、Google Gemini、DeepSeek、OpenRouter、xAI Grok、Ollama、Magpie 及自定义 OpenAI / Anthropic 兼容接口）。可自然语言查询域名、DNS、流量与缓存；所有写操作均需人工确认卡片。 |
-| **Cloudflare Skills** | 内置 8 套运维规范：DNS 迁移审计、SSL/TLS 加固、缓存调优、WAF 威胁排查、Workers 巡检、全账户健康巡检、邮件解析与防伪造审计、页面规则现代化迁移，并支持导入自定义 `SKILL.md`。 |
+| **AI 助手** | 多会话 AI 工作区，支持端侧 Apple 智能与私有云计算（Private Cloud Compute），也支持远程服务商（OpenAI、Anthropic Claude、Google Gemini、DeepSeek、OpenRouter、xAI Grok、Ollama、Magpie 及自定义 OpenAI / Anthropic 兼容接口）。支持全文历史搜索、思考过程折叠、工具执行卡片、域名作用域过滤，所有写操作均需会话级人工确认卡片。 |
+| **Cloudflare Skills** | 内置 8 套运维规范：DNS 迁移审计、SSL/TLS 加固、缓存调优、WAF 威胁排查、Workers 巡检、全账户健康巡检、邮件解析与防伪造审计、页面规则现代化迁移，支持按会话固定 Skill 与导入自定义 `SKILL.md`。 |
 | **桌面小组件** | 内置 8 款 WidgetKit 小组件：域名状态、流量概览、流量指标、流量趋势、站点健康、站点监控、多站点对比、重点域名高亮。 |
 | **Siri 与快捷指令** | 支持通过快捷指令或语音清除 Zone 缓存、列出 Zone、创建 DNS 记录、切换开发模式。 |
 | **多账户与权限诊断** | 支持保存并切换多个 Cloudflare API Token（系统 Keychain 加密存储），一键检测 Token 缺失权限并给出修复建议；基于 SwiftData 的本地离线缓存与过期提示。 |
-| **macOS 体验优化** | 桌面优先的助手布局、工具栏快捷模型切换、可搜索的模型选择器（含厂商筛选与推荐标记）。 |
+| **macOS 体验优化** | 可折叠会话历史侧边栏、原生 Markdown 导出、消息悬停快捷操作、工具栏快捷模型切换、可搜索的模型选择器（含厂商筛选与推荐标记）。 |
 
-## v1.0.1（Build 2）更新内容
+## v1.0.2（Build 3）更新内容
 
-- 新增 macOS 通用 DMG 分发包，与 iOS IPA 同步发布。
-- 修复 Google Gemini 服务商图标显示异常，以及多个内置品牌 SVG 的解析问题。
-- iPhone 端「快速添加 AI 服务商」卡片改为完整显示服务商名称，不再截断。
-- AI 助手支持一次查询**账户下全部活跃域名**（domain 留空），输出缓存命中率、缓存带宽占比与威胁拦截数。
-- 收紧工具提示词：禁止使用 `example.com` 等占位域名，遇到「找不到」时自动改用 `list_zones` 返回的真实域名重试。
-- 新增 3 套内置 Skill：全账户健康巡检、邮件解析与防伪造审计、页面规则迁移。
-- 重新设计 macOS 端「选择模型」与「Cloudflare 助手」页面：更宽的消息气泡、快捷示例卡片与内联模型切换。
+- **全新多会话 AI 工作区**：新增双层磁盘持久化会话历史，支持按置顶/今天/昨天/最近 7 天/更早分组、标题与正文全文检索、重命名、复制、从任意消息分叉（Fork）、对话压缩，以及导出包含思考过程与工具调用记录的 Markdown 文件。
+- **消息交互与流式韧性升级**：单条消息支持复制、编辑并重发、重新生成、分叉与删除；新增思考过程（Thinking）折叠展示与可展开的工具执行卡片；远程 LLM 流式客户端改用独立长连接会话，对瞬时网络错误与 429/5xx 响应自动重试。
+- **作用域过滤与并发审批隔离**：新增按账户/多选域名限定的作用域过滤胶囊、单会话独立模型覆盖与固定 Skill 栏、可配上下文 Token 预算与原子裁剪（避免孤立工具结果）、跨会话记忆开关，以及基于 `TaskLocal` 的多会话独立写操作内联审批（支持 1 小时临时授权）。
+- **Private Cloud Compute 与双端平台适配**：新增 Apple 私有云计算开关与无权限自动安全回退；iPhone 端适配 iOS 26.1 底部 `tabViewBottomAccessory` 折叠输入栏；macOS 端补齐可折叠会话侧边栏、悬停操作栏与原生 `NSSavePanel` 导出，实现与 iOS 完整功能对齐。
+- **安全改进**：移除 `ZoneRepository` 中硬编码的域名到期查询密钥回退值，改为仅从本地 `Secrets.plist` 读取。
 
 ## 支持语言
 

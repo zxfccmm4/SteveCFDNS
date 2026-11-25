@@ -12,11 +12,11 @@ Get the latest release from [GitHub Releases](https://github.com/zxfccmm4/SteveC
 
 | Field | iOS / iPadOS | macOS |
 | :--- | :--- | :--- |
-| Version | `v1.0.1` (Build `2`) | `v1.0.1` (Build `2`) |
-| Package | [`SteveCFDNS_v1.0.1_b2.ipa`](SteveCFDNS_v1.0.1_b2.ipa) (17.0 MB) | [`SteveCFDNS_v1.0.1_b2.dmg`](SteveCFDNS_v1.0.1_b2.dmg) (19.4 MB) |
+| Version | `v1.0.2` (Build `3`) | `v1.0.2` (Build `3`) |
+| Package | [`SteveCFDNS_v1.0.2_b3.ipa`](SteveCFDNS_v1.0.2_b3.ipa) (17.3 MB) | [`SteveCFDNS_v1.0.2_b3.dmg`](SteveCFDNS_v1.0.2_b3.dmg) (20.1 MB) |
 | Architecture | `arm64` (iPhone & iPad) | Universal (`arm64` + `x86_64`) |
 | Signing | Unsigned (Release) | Ad-hoc signed (Release) |
-| SHA-256 | `c5ecbbc80d40f51846ffb9b507283e7158455f068f9d9850f06679d0a739e29c` | `5bed82d5c7846cb054f36d53cd17e1596f4c0caeaab8fdd2f9bd633b00ad4def` |
+| SHA-256 | `173d042b9dd2ddba1015c93ecfac2900bbc1392f919539fd66dd0682069f59a9` | `d0b7439a45da4c99cf2feb88f0dd05c0f964c4cadf0cc4688c5940fc5b72da2a` |
 
 ## Installation
 
@@ -53,22 +53,20 @@ The DMG is **ad-hoc signed** but not notarized. After installing to `/Applicatio
 | **Rules Center** | Manage Page Rules, WAF / Firewall custom rules, and phase-based Rulesets. |
 | **Analytics** | Requests, page views, unique visitors, bandwidth trends, plus cache hit rate, cached bandwidth ratio, and threat counters. |
 | **Workers** | Read-only list of deployed Cloudflare Workers scripts. |
-| **AI Assistant** | Works with Apple Intelligence on-device models and remote providers (OpenAI, Anthropic Claude, Google Gemini, DeepSeek, OpenRouter, xAI Grok, Ollama, Magpie, custom OpenAI/Anthropic-compatible endpoints). Natural-language queries over zones, DNS, traffic and cache; write operations always require card confirmation. |
-| **Cloudflare Skills** | 8 built-in operational playbooks — DNS migration audit, SSL/TLS hardening, cache tuning, WAF threat triage, Workers inspection, full-account health check, email deliverability (SPF/DKIM/DMARC), and Page Rules migration — plus custom `SKILL.md` import. |
+| **AI Assistant** | Multi-conversation AI workspace supporting Apple Intelligence (on-device & Private Cloud Compute) and remote providers (OpenAI, Anthropic Claude, Google Gemini, DeepSeek, OpenRouter, xAI Grok, Ollama, Magpie, custom OpenAI/Anthropic-compatible endpoints). Features full-text history search, thinking disclosure, collapsible tool execution cards, domain scope filtering, and per-conversation inline confirmation for write operations. |
+| **Cloudflare Skills** | 8 built-in operational playbooks — DNS migration audit, SSL/TLS hardening, cache tuning, WAF threat triage, Workers inspection, full-account health check, email deliverability (SPF/DKIM/DMARC), and Page Rules migration — plus per-conversation pinned skills and custom `SKILL.md` import. |
 | **Widgets** | 8 Home Screen widgets: Zone Status, Traffic Overview, Traffic Metrics, Traffic Trend, Zone Health, Zone Monitor, Multi-Zone Compare, and Zone Highlight. |
 | **Siri & Shortcuts** | App Intents for purging zone cache, listing zones, creating DNS records, and toggling Development Mode. |
 | **Multi-Account & Diagnostics** | Manage multiple Cloudflare API Tokens in system Keychain, probe token permissions with fix suggestions, and view cached data offline via SwiftData. |
-| **macOS 优化** | Desktop-first assistant layout, quick model switcher in the toolbar, searchable model picker with vendor filters and recommended badges. |
+| **macOS Experience** | Collapsible conversation history sidebar, native Markdown export, hover message actions, quick model switcher in the toolbar, searchable model picker with vendor filters and recommended badges. |
 
-## What's New in v1.0.1 (Build 2)
+## What's New in v1.0.2 (Build 3)
 
-- Added macOS distribution as a universal DMG, alongside the iOS IPA.
-- Fixed the Google Gemini provider icon rendering and several SVG parsing issues in bundled brand icons.
-- Quick-add provider cards on iPhone now show complete provider names instead of truncating them.
-- AI assistant can now query **all active zones at once** (leave the domain empty), reporting cache hit rate, cached bandwidth ratio, and threat counts.
-- Hardened tool prompts so the model never invents placeholder domains such as `example.com`, and always retries with real zones returned by `list_zones`.
-- Added three built-in Skills: full-account health check, email deliverability audit, and Page Rules modernization.
-- Redesigned the macOS model picker and Cloudflare assistant pages with wider message bubbles, sample prompt cards, and an inline model switcher.
+- **Multi-Conversation AI Workspace**: Added two-tier disk-persisted conversation history with pinned/date buckets, full-text search across titles and message bodies, rename, duplicate, fork from any message, conversation compression, and Markdown export (including thinking blocks and tool executions).
+- **Rich Message & Streaming Experience**: Added message copy, edit & resend, regenerate, fork, and delete actions; shimmering collapsible Thinking disclosure and Tool Execution cards; and resilient long-lived SSE streaming with automatic retry on transient network/HTTP errors.
+- **Scoped Context & Isolated Approvals**: Added domain/account scope filter capsules, per-conversation model overrides and pinned Skills strip, configurable context token budget with atomic pruning, optional cross-session memory, and `TaskLocal`-isolated inline write approvals with optional 1-hour grant.
+- **Apple Private Cloud Compute & Platform Polish**: Added Private Cloud Compute toggle with automatic safe fallback; iOS 26.1 `tabViewBottomAccessory` collapsed composer on iPhone; and full macOS feature parity with a collapsible conversation sidebar and native `NSSavePanel` export.
+- **Security**: Removed the hardcoded fallback API key in `ZoneRepository`, relying solely on local `Secrets.plist`.
 
 ## Languages
 
